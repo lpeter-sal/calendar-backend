@@ -1,4 +1,9 @@
 
+/*
+    Dictionary of errors
+*/
+
+
 const REGISTERED_USER   = ({ errorCode: '-1', errorMessage: 'REGISTERED USER IN DB' });
 const USER_NOT_EXIST    = ({ errorCode: '-2', errorMessage: 'THE USER DOES NOT EXIST IN DB' });
 const USER_CREDENTIALS  = ({ errorCode: '-3', errorMessage: 'INCORRECT USER CREDENTIALS' });

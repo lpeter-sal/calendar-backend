@@ -1,4 +1,6 @@
-
+/* 
+    Database Configuration
+*/
 
 const mongoose = require('mongoose');
 

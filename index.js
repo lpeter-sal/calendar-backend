@@ -20,15 +20,8 @@ app.use( express.static('public') );
 app.use( express.json() );
 
 // Routes
-
-//TODO: Authentification
 app.use('/api/auth', require('./routes/auth') );
-//TODO: CRUD: Eventos
-
-
-
-
-
+app.use('/api/events', require('./routes/events') );
 
 
 // Listen requests

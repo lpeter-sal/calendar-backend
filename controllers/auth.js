@@ -9,6 +9,7 @@ const bcrypt = require('bcryptjs');
 const User = require('../models/User');
 const { REGISTERED_USER, USER_NOT_EXIST, USER_CREDENTIALS, UNEXPECTED_ERROR } = require('../messages/errors/errorsMessages');
 const { genereteJWT } = require('../helpers/jwt');
+const { catchMessage } = require('../helpers/catchMessage');
 
 const createUser = async( req, res = response ) => {
 
@@ -44,13 +45,7 @@ const createUser = async( req, res = response ) => {
         });
         
     } catch (error) {
-        console.log(error);
-        res.status(500).json({
-            ok: false,
-            errorMessage: UNEXPECTED_ERROR.errorMessage,
-            errorCode: UNEXPECTED_ERROR.errorCode,
-            http_status: 500
-        });
+        catchMessage( error, res );
     }
 }
 
@@ -93,10 +88,7 @@ const loginUser = async(req, res = response ) => {
 
         
     } catch (error) {
-        console.log(error);
-        res.status(500).json({
-            ok: false,
-        });
+        catchMessage( error, res );
     }
 }
 
